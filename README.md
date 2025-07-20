@@ -7,7 +7,7 @@ A comprehensive AI-powered crop disease detection and treatment recommendation s
 This hackathon project addresses the critical challenge of crop disease management in Ghana by providing farmers with:
 
 - *AI-powered disease detection* from crop photos using deep learning
-- *Intelligent treatment recommendations* based on disease severity and farmer preferences
+- *Intelligent treatment recommendations* based on farmer preferences
 - *Supplier location services* to find nearby agricultural suppliers
 - *Offline functionality* for areas with limited internet connectivity
 - *Multi-platform support* through mobile app and web API
@@ -27,30 +27,6 @@ This hackathon project addresses the critical challenge of crop disease manageme
 - *Multi-class Classification*: 20+ disease classes across 4 crop types
 - *Mobile Deployment*: TensorFlow.js conversion with model sharding for optimal loading
 - *Offline-First*: Complete AI inference runs locally on device without internet dependency
-
-### System Architecture
-
-┌─────────────────────────────────────────────────────────────┐
-│                    Mobile App (React Native)               │
-│  ┌─────────────────┐    ┌─────────────────┐                │
-│  │  TensorFlow.js  │    │   Local Storage │                │
-│  │   ML Model      │    │  (AsyncStorage) │                │
-│  │ (Offline AI)    │    │ & Image Cache   │                │
-│  └─────────────────┘    └─────────────────┘                │
-└─────────────────────────────────────────────────────────────┘
-                              │
-                              ▼ (Only for treatment data)
-                    ┌─────────────────┐
-                    │   Backend API   │
-                    │   (FastAPI)     │
-                    └─────────────────┘
-                              │
-                              ▼
-                    ┌─────────────────┐
-                    │ Disease Database│
-                    │ & Supplier Info │
-                    └─────────────────┘
-
 
 ### Implementation Strategy
 1. *Offline-First AI*: TensorFlow.js model runs entirely on device for instant disease detection
